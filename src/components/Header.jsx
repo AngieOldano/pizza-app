@@ -6,7 +6,7 @@ const Header = () => {
         <div>
             <nav className='navbar'>
                 <div>
-                    <img width="300" height="300"src={logonav} alt=""/>
+                    <img width="300" height="200"src={logonav} alt=""/>
                 </div>
                 <div className='d-flex justify-content-end'>
                     <ul>
