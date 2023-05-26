@@ -39,7 +39,7 @@ function App() {
 
       <div className=''>
         <div className='d-flex justify-content-center'>
-          <article className='mt-5'>
+          <article className='mt-5 text-center'>
             <h1>MORE OFFERS, DEALS, AND DELIGHTS</h1>
             <h3>Discover our current deals and coupons for your favorites Pizzas.</h3>
           </article>
