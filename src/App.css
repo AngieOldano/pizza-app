@@ -63,11 +63,11 @@
 
 .images-pizzas-container:hover .images-pizza  {
   transform: scale(1.3);
+  
 }
 
 .images-pizzas-container:hover .overlay {
   opacity: 1;
-
 }
 
 .images-pizzas-container:hover .text-overlay {

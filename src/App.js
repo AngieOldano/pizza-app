@@ -67,8 +67,10 @@ function App() {
 
         
         <div className=''>
-          <div className='row d-flex justify-content-center'>
-            <div className='mb-3 col-4 images-pizzas-container'>
+
+          <div className='mb-3 row d-flex justify-content-center'>
+
+            <div className='col-4 images-pizzas-container'>
               <img className='rounded-4 images-pizza' width="400" height="400" src={onion} alt="description of image"/>
               <div class="overlay">
                 <div class="text-overlay">
@@ -76,9 +78,7 @@ function App() {
                 </div>
               </div>
             </div>
-
-
-            <div className='mb-3 col-4 images-pizzas-container'>
+            <div className='col-4 images-pizzas-container'>
               <img className='rounded-4 images-pizza' width="400" height="400" src={veggie} alt="description of image" />
               <div class="overlay">
                 <div class="text-overlay">
@@ -86,8 +86,7 @@ function App() {
                 </div>
               </div>
             </div>
-
-            <div className='mb-3 col-4 images-pizzas-container'>
+            <div className='col-4 images-pizzas-container'>
               <img className='rounded-4 images-pizza' width="400" height="400" src={hell} alt="description of image"/>
               <div class="overlay">
                 <div class="text-overlay">
@@ -97,7 +96,7 @@ function App() {
             </div>  
           </div>
 
-          <div className='row d-flex justify-content-center'>
+          <div className='mb-3 row d-flex justify-content-center'>
             <div className='col-4 images-pizzas-container'>
               <img className='rounded-4 images-pizza' width="400" height="400" src={modern} alt="description of image"/>
               <div class="overlay">
