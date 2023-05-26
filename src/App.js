@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import pizzaimage from './assets/pizzas-image.png';
 import onion from './assets/onion.jpg';
 import onionPepperoni from './assets/onion-pepperoni.jpg';
@@ -32,7 +33,7 @@ function App() {
           <p>We care so that our orders arrive as soon as possible in the best conditions</p>
         </div>
         <div className='col-6'>
-          <img className='rounded-4' width="400" height="400" src={pizzaimage} />
+          <img className='rounded-4' width="400" height="400" src={pizzaimage} alt="description of image" />
         </div>
       </div>
 
@@ -57,45 +58,94 @@ function App() {
           </article>
         </div>
         
-        <div className='row'>
-          <div className='col-4'>
-            <img className='rounded-4' width="400" height="400" src={onion}/>
+        <div className='p-3 row'>
+          <div className='col-4 images-pizzas-container'>
+            <img className='rounded-4 images-pizza' width="400" height="400" src={onion} alt="description of image"/>
+            <div class="overlay">
+              <div class="text-overlay">
+                <p>ONION SPECIAL</p> <p>Sauce, mozzarella, onion cut into feathers, cherry tomatoes confit, black olives</p>
+              </div>
+            </div>
           </div>
-          <div className='col-4'>
-            <img className='rounded-4' width="400" height="400" src={veggie}/>
+
+          
+          <div className='col-4 images-pizzas-container'>
+            <img className='rounded-4 images-pizza' width="400" height="400" src={veggie} alt="description of image" />
+            <div class="overlay">
+              <div class="text-overlay">
+                <p>VEGGIE</p> <p>Sauce, muzza, zucchini, roasted, roasted eggplant, candied cherry tomatoes, black olives, and basil leaves</p>
+              </div>
+            </div>
           </div>
-          <div className='col-4'>
-            <img className='rounded-4' width="400" height="400" src={hell}/>
+
+          <div className='col-4 images-pizzas-container'>
+            <img className='rounded-4 images-pizza' width="400" height="400" src={hell} alt="description of image"/>
+            <div class="overlay">
+              <div class="text-overlay">
+                <p>HELL</p> <p>Sauce, mozza, sliced bacon, sliced green jalapeños, red jalapeño sauce, red onion, shredded provolone and basil leaves</p>
+              </div>
+            </div>
           </div>  
         </div>
 
-        <div className='row'>
-          <div className='col-4'>
-            <img className='rounded-4' width="400" height="400" src={modern}/>
+        <div className='p-3 row'>
+          <div className='col-4 images-pizzas-container'>
+            <img className='rounded-4 images-pizza' width="400" height="400" src={modern} alt="description of image"/>
+            <div class="overlay">
+              <div class="text-overlay">
+                <p>MODERN</p> <p>Sauce, mozzarella, arugula, raw ham, dehydrated tomatoes, parmesan</p>
+              </div>
+            </div>
           </div>
-          <div className='col-4'>
-            <img className='rounded-4' width="400" height="400" src={onionHam}/>
+          <div className='col-4 images-pizzas-container'>
+            <img className='rounded-4 images-pizza' width="400" height="400" src={onionHam} alt="description of image"/>
+            <div class="overlay">
+              <div class="text-overlay">
+                <p>ONION HAM</p> <p>Sauce, mozzarella, onion cut into feathers, raw ham, parmesan</p>
+              </div>
+            </div>
           </div>
-          <div className='col-4'>
-            <img className='rounded-4' width="400" height="400" src={german}/>
+          <div className='col-4 images-pizzas-container'>
+            <img className='rounded-4 images-pizza' width="400" height="400" src={german} alt="description of image"/> 
+            <div class="overlay">
+              <div class="text-overlay">
+                <p>GERMAN</p> <p>Sauce, mozzarella, caramelized onion, grill sausage and mustard</p>
+              </div>
+            </div>
           </div>  
         </div>
 
-        <div className='row'>
-          <div className='col-4'>
-            <img className='rounded-4' width="400" height="400" src={onionPepperoni}/>
+        <div className='p-3 row'>
+          <div className='col-4 images-pizzas-container'>
+            <img className='rounded-4 images-pizza' width="400" height="400" src={onionPepperoni} alt="description of image"/>
+            <div class="overlay">
+              <div class="text-overlay">
+                <p>ONION PEPPERONI</p> <p>Sauce, mozzarella, onion cut into feathers, pepperoni</p>
+              </div>
+            </div>
           </div>
-          <div className='col-4'>
-            <img className='rounded-4' width="400" height="400" src={onionPepperoni}/>
+          <div className='col-4 images-pizzas-container'>
+            <img className='rounded-4 ' width="400" height="400" src={onionPepperoni} alt="description of image"/>
+            <div class="overlay">
+              <div class="text-overlay">
+                <p>ONION SPECIAL</p> <p>Sauce, mozzarella, onion cut into feathers, cherry tomatoes confit, black olives</p>
+              </div>
+            </div>
           </div>
-          <div className='col-4'>
-            <img className='rounded-4' width="400" height="400" src={onionPepperoni}/>
+          <div className='col-4 images-pizzas-container'>
+            <img className='rounded-4' width="400" height="400" src={onionPepperoni} alt="description of image"/>
+            <div class="overlay">
+              <div class="text-overlay">
+                <p>ONION SPECIAL</p> <p>Sauce, mozzarella, onion cut into feathers, cherry tomatoes confit, black olives</p>
+              </div>
+            </div>
           </div>  
         </div>
 
         
       </div>
 
+      <Footer/>
     </div>
   );
 }
