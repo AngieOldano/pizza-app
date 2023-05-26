@@ -5,7 +5,7 @@ const Header = () => {
     return (  
         <div className=''>
             <nav class="navbar navbar-light bg-faded">
-                <div>
+                <div className=''>
                     <img width="200" height="100" src={logonav} alt=""/>
                 </div>
                 <div className=''>
