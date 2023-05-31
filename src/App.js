@@ -37,17 +37,13 @@ function App() {
       <Header/>
       
       <div className="mt-5 background-image row">
-
-        <div className='col-7'>
-        </div>
-
+        <div className='col-7'></div>
         <div className='col-5 text-white align-self-center'>
           <div className='mt-5'>
             <h1 className='display-1'>We Make the Best Pizza in Town</h1>
             <h3>Our number one mission is to deliver the best possible pizza for the best possible price for our customers. </h3>
           </div>
         </div> 
-
       </div>
 
       <div className='mt-5 mb-5 row container-fluid column-gap-5'>
@@ -116,9 +112,8 @@ function App() {
             <h1>OUR PIZZAS</h1>
           </article>
         </div>
-        
-        <div className=''>
-
+      
+        <div>
           <div className='mb-3 row '>          
             <div className='pizzas-container d-flex justify-content-center grid gap-0 column-gap-3'> 
               <div className='col-4 pizza-image-container'>
@@ -129,8 +124,6 @@ function App() {
                   </div>
                 </div>
               </div>
-            
-              
           
               <div className='col-4 pizza-image-container'>
                 <img className='rounded-4 zoom-pizza' width="400" height="400" src={veggie} alt="description of image" />
@@ -162,8 +155,6 @@ function App() {
                   </div>
                 </div>
               </div>
-            
-              
           
               <div className='col-4 pizza-image-container'>
                 <img className='rounded-4 zoom-pizza' width="400" height="400" src={onionHam} alt="description of image" />
@@ -195,9 +186,7 @@ function App() {
                   </div>
                 </div>
               </div>
-            
-              
-          
+                      
               <div className='col-4 pizza-image-container'>
                 <img className='rounded-4 zoom-pizza' width="400" height="400" src={chesses4} alt="description of image" />
                 <div class="overlay">
@@ -215,13 +204,8 @@ function App() {
                   </div>
                 </div>
               </div>  
-
             </div> 
           </div>
-
-
-
-          
         </div>
 
         
@@ -234,7 +218,7 @@ function App() {
         instagram = {"https://www.instagram.com/"}
         twitter = {"https://www.twitter.com/"}
       />
-      
+
     </div>
   );
 }
