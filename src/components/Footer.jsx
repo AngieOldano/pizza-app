@@ -25,7 +25,7 @@ const Footer = () => {
                         <h4 className='text-white'>CONTACT US</h4>
                         <h6 className='text-white'>416 533 3311</h6>
                         <h6 className='text-white'>@pizzadelivery.com</h6>
-                        <h6 className='text-white'>1596 Queen Street West Toronto, Ontario</h6>
+                        <h6 className='text-white'>110 Hepbourne St Toronto, Ontario</h6>
                     </article>
                     <p className='fw-lighter'>Copyright © Pizza Delivery {anio}</p>
                 </div>

@@ -11,6 +11,9 @@ import hell from './assets/hell.jpg';
 import german from './assets/german.jpg';
 import pepperoni from './assets/pepperoni.jpg';
 import chesses4 from './assets/4chesses.jpg';
+import easy from './assets/easy.png';
+import easy2 from './assets/easy2.png';
+import easy3 from './assets/easy3.png';
 import { useState } from 'react';
 
 function App() {
@@ -70,6 +73,38 @@ function App() {
         <div className='d-flex justify-content-center '> 
           <div className='mt-4 pizza-gif'>
             <button type="button" className="btn btn-warning rounded-5 m-4">Delivery Now</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div className='p-5'>
+        <div className='d-flex justify-content-center m-4'>
+          <article className='text-center'>
+            <h1>YOUR FAVORITE PIZZA DELIVERY PARTNER</h1>
+          </article>
+        </div>
+        <div className='row d-flex justify-content-center'>
+          <div className='col-4 d-flex justify-content-end text-center'>
+             <div>
+                <img className='rounded-4' width="200" height="200" src={easy} alt="description of image" />
+                <p className='fw-bold'>Easy to Oreder</p>
+                <p>You only need a few steps in food ordering</p>
+              </div>
+          </div>
+          <div className='col-4 d-flex justify-content-center text-center'>
+              <div>
+                <img className='rounded-4' width="200" height="200" src={easy2} alt="description of image" />
+                <p className='fw-bold'>Easy to Oreder</p>
+                <p>Delivery that is always on time even faster</p>
+              </div>
+          </div>
+          <div className='col-4 d-flex justify-content-start text-center'>
+              <div>
+                <img className='rounded-4' width="200" height="200" src={easy3} alt="description of image" />
+                <p className='fw-bold'>Easy to Oreder</p>
+                <p>Not only fast for us, quality is also number one</p>
+              </div>
           </div>
         </div>
       </div>
