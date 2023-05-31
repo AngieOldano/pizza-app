@@ -11,8 +11,23 @@ import hell from './assets/hell.jpg';
 import german from './assets/german.jpg';
 import pepperoni from './assets/pepperoni.jpg';
 import chesses4 from './assets/4chesses.jpg';
+import { useState } from 'react';
 
 function App() {
+
+  const [pizzas, setPizzas] = useState(
+    [
+      {id:1,name:"ONION SPECIAL", ingredients:"Sauce, mozzarella, onion cut into feathers, cherry tomatoes confit, black olives"},
+      {id:2,name:"VEGGIE ", ingredients:"Sauce, muzza, zucchini, roasted, roasted eggplant, candied cherry tomatoes, black olives, and basil leaves"},
+      {id:3,name:"HELL ", ingredients:"Sauce, mozza, sliced bacon, sliced green jalapeños, red jalapeño sauce, red onion, shredded provolone and basil leaves"},
+      {id:4,name:"MODERN ", ingredients:"Sauce, mozzarella, arugula, raw ham, dehydrated tomatoes, parmesan"},
+      {id:5,name:"ONION HAM ", ingredients:"Sauce, mozzarella, onion cut into feathers, raw ham, parmesan"},
+      {id:6,name:"GERMAN ", ingredients:"Sauce, mozzarella, caramelized onion, grill sausage and mustard"},
+      {id:7,name:"ONION PEPPERONI ", ingredients:"Sauce, mozzarella, onion cut into feathers, pepperoni"},
+      {id:8,name:"4 CHESSES ", ingredients:"Sauce, mozzarella, parmesan, fontina, gorgonzola, black olives"},
+      {id:9,name:"PEPPERONI ", ingredients:"Mozzarella, pepperoni, parmesan"}
+    ]
+  );
 
   return (
     <div className=''>
@@ -75,7 +90,7 @@ function App() {
                 <img className='rounded-4 zoom-pizza' width="400" height="400" src={onion} alt="description of image"/>
                 <div class="overlay">
                   <div class="text-overlay">
-                    <p>ONION SPECIAL</p> <p>Sauce, mozzarella, onion cut into feathers, cherry tomatoes confit, black olives</p>
+                    <p>{pizzas[0].name}</p><p>{pizzas[0].ingredients}</p>
                   </div>
                 </div>
               </div>
@@ -86,7 +101,7 @@ function App() {
                 <img className='rounded-4 zoom-pizza' width="400" height="400" src={veggie} alt="description of image" />
                 <div class="overlay">
                   <div class="text-overlay">
-                    <p>VEGGIE</p> <p>Sauce, muzza, zucchini, roasted, roasted eggplant, candied cherry tomatoes, black olives, and basil leaves</p>
+                    <p>{pizzas[1].name}</p><p>{pizzas[1].ingredients}</p>
                   </div>
                 </div>
               </div>
@@ -95,7 +110,7 @@ function App() {
                 <img className='rounded-4 zoom-pizza' width="400" height="400" src={hell} alt="description of image"/>
                 <div class="overlay">
                   <div class="text-overlay">
-                    <p>HELL</p> <p>Sauce, mozza, sliced bacon, sliced green jalapeños, red jalapeño sauce, red onion, shredded provolone and basil leaves</p>
+                    <p>{pizzas[2].name}</p><p>{pizzas[2].ingredients}</p>
                   </div>
                 </div>
               </div>  
@@ -108,7 +123,7 @@ function App() {
                 <img className='rounded-4 zoom-pizza' width="400" height="400" src={modern} alt="description of image"/>
                 <div class="overlay">
                   <div class="text-overlay">
-                    <p>MODERN</p> <p>Sauce, mozzarella, arugula, raw ham, dehydrated tomatoes, parmesan</p>
+                    <p>{pizzas[3].name}</p><p>{pizzas[3].ingredients}</p>
                   </div>
                 </div>
               </div>
@@ -119,7 +134,7 @@ function App() {
                 <img className='rounded-4 zoom-pizza' width="400" height="400" src={onionHam} alt="description of image" />
                 <div class="overlay">
                   <div class="text-overlay">
-                    <p>ONION HAM</p> <p>Sauce, mozzarella, onion cut into feathers, raw ham, parmesan</p>
+                    <p>{pizzas[4].name}</p><p>{pizzas[4].ingredients}</p>
                   </div>
                 </div>
               </div>
@@ -128,7 +143,7 @@ function App() {
                 <img className='rounded-4 zoom-pizza' width="400" height="400" src={german} alt="description of image"/>
                 <div class="overlay">
                   <div class="text-overlay">
-                    <p>GERMAN</p> <p>Sauce, mozzarella, caramelized onion, grill sausage and mustard</p>
+                    <p>{pizzas[5].name}</p><p>{pizzas[5].ingredients}</p>
                   </div>
                 </div>
               </div>  
@@ -141,7 +156,7 @@ function App() {
                 <img className='rounded-4 zoom-pizza' width="400" height="400" src={onionPepperoni} alt="description of image"/>
                 <div class="overlay">
                   <div class="text-overlay">
-                    <p>ONION PEPPERONI</p> <p>Sauce, mozzarella, onion cut into feathers, pepperoni</p>
+                  <p>{pizzas[6].name}</p><p>{pizzas[6].ingredients}</p>
                   </div>
                 </div>
               </div>
@@ -152,7 +167,7 @@ function App() {
                 <img className='rounded-4 zoom-pizza' width="400" height="400" src={chesses4} alt="description of image" />
                 <div class="overlay">
                   <div class="text-overlay">
-                    <p>4 CHESSES</p> <p>Sauce, mozzarella, parmesan, fontina, gorgonzola, black olives</p>
+                    <p>{pizzas[7].name}</p><p>{pizzas[7].ingredients}</p>
                   </div>
                 </div>
               </div>
@@ -161,7 +176,7 @@ function App() {
                 <img className='rounded-4 zoom-pizza' width="400" height="400" src={pepperoni} alt="description of image"/>
                 <div class="overlay">
                   <div class="text-overlay">
-                    <p>PEPPERONI</p> <p>Mozzarella, pepperoni, parmesan</p>
+                    <p>{pizzas[8].name}</p><p>{pizzas[8].ingredients}</p>
                   </div>
                 </div>
               </div>  

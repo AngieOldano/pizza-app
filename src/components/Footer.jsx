@@ -2,6 +2,9 @@ import React from 'react';
 import logonav from "../assets/logonav.png";
 
 const Footer = () => {
+
+    const anio = new Date().getFullYear();
+
     return (  
         <div className='background-footer'>
             <div className='row'>
@@ -18,13 +21,13 @@ const Footer = () => {
                   </ul>
                 </div>
                 <div className='col-4 text-center'>
-                    <article className='text-center m-2'>
+                    <article className='text-center m-4'>
                         <h4 className='text-white'>CONTACT US</h4>
-                        <p className='font-monospace text-white'>416 533 3311</p>
-                        <p className='font-monospace text-white'>@PIZZADELIVERY.COM</p>
-                        <p className='font-monospace text-white'>1596 QUEEN STREET WEST TORONTO, ONTARIO</p>
+                        <h6 className='text-white'>416 533 3311</h6>
+                        <h6 className='text-white'>@pizzadelivery.com</h6>
+                        <h6 className='text-white'>1596 Queen Street West Toronto, Ontario</h6>
                     </article>
-                    <p className='fw-lighter'>Copyright © Pizza Delivery 2023</p>
+                    <p className='fw-lighter'>Copyright © Pizza Delivery {anio}</p>
                 </div>
                 <div className='col-4'>   
                     <ul className="list-inline text-center">
