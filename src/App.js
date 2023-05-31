@@ -227,7 +227,14 @@ function App() {
         
       </div>
 
-      <Footer/>
+      <Footer
+        facebook = {"https://www.facebook.com/"}
+        whatsapp = {"https://web.whatsapp.com/"}
+        tiktok = {"https://www.tiktok.com/"}
+        instagram = {"https://www.instagram.com/"}
+        twitter = {"https://www.twitter.com/"}
+      />
+      
     </div>
   );
 }

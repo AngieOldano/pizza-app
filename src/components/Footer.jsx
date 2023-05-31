@@ -1,7 +1,7 @@
 import React from 'react';
 import logonav from "../assets/logonav.png";
 
-const Footer = () => {
+const Footer = ({facebook,instagram,whatsapp,tiktok,twitter}) => {
 
     const anio = new Date().getFullYear();
 
@@ -13,11 +13,11 @@ const Footer = () => {
                         <img width="200" height="100" src={logonav} alt=""/>
                     </div>
                     <ul className="list-inline">
-                        <li className="list-inline-item"><a href=""><i className="bi bi-whatsapp text-white m-2"></i></a></li>
-                        <li className="list-inline-item"><a href=""><i className="bi bi-facebook text-white m-2"></i></a></li>
-                        <li className="list-inline-item"><a href=""><i className="bi bi-tiktok text-white m-2"></i></a></li>
-                        <li className="list-inline-item"><a href=""><i className="bi bi-twitter text-white m-2"></i></a></li>
-                        <li className="list-inline-item"><a href=""><i className="bi bi-instagram text-white m-2"></i></a></li>
+                        <li className="list-inline-item"><a href={whatsapp}><i className="bi bi-whatsapp text-white m-2"></i></a></li>
+                        <li className="list-inline-item"><a href={facebook}><i className="bi bi-facebook text-white m-2"></i></a></li>
+                        <li className="list-inline-item"><a href={tiktok}><i className="bi bi-tiktok text-white m-2"></i></a></li>
+                        <li className="list-inline-item"><a href={twitter}><i className="bi bi-twitter text-white m-2"></i></a></li>
+                        <li className="list-inline-item"><a href={instagram}><i className="bi bi-instagram text-white m-2"></i></a></li>
                   </ul>
                 </div>
                 <div className='col-4 text-center'>
