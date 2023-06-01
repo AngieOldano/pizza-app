@@ -10,10 +10,8 @@ body, html {
   height: 100vh;
 }
 
-
 .background-footer{
   background-color: brown;
-
 }
 
 .pizza-gif{
@@ -23,7 +21,6 @@ body, html {
   width: 700px; 
   height: 400px;
   border-radius: 5%;
-
 }
 
 .pizzas-container {
