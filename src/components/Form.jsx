@@ -2,7 +2,7 @@ import { React, Fragment } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
 
 
-const Formu = (closeForm, showForm) => {
+const Formu = ({closeForm,showForm}) => {
     return (
         <Fragment>
             <Modal show={showForm} onHide={closeForm}>
