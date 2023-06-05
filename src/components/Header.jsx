@@ -1,8 +1,22 @@
-import React from 'react';
+import {React, useState} from 'react';
 import logonav from "../assets/logonav.png";
-import Formulario from './Formulario';
+import Formu from './Form';
 
 const Header = () => {
+
+    const [showForm, setShowForm] = useState(false);
+
+    // Para mostrar el modal con el formulario
+    const openForm = () => {
+        setShowForm(true);
+      };
+
+    //Para cerrar el modal
+    const closeForm = () => {
+        setShowForm(false);
+    };
+
+
     return (  
         <div>
             <nav class=" navbar navbar-light bg-faded fixed-top bg-body-tertiary">
@@ -15,7 +29,7 @@ const Header = () => {
                             <div className="container-fluid">
                                 <form className="d-flex" role="search">
                                   <input className="form-control me-2" type="search" placeholder="" aria-label="Search"></input>
-                                    <button className="btn btn-light" type="submit"><i class="bi bi-search"></i><Formulario/></button>
+                                    <button className="btn btn-light" type="submit"><i class="bi bi-search"></i></button>
                                 </form>
                             </div>
                         </li>
@@ -33,7 +47,10 @@ const Header = () => {
                             </a>
                         </li>
                         <li li className="nav-item mx-5">
-                            <button type="button" className="btn btn-warning rounded-5">Delivery Now</button>
+                            <button type="button" className="btn btn-warning rounded-5" onClick={openForm}>Delivery Now</button>
+                            {showForm && (
+                                <Formu closeForm={closeForm} showForm={showForm}/>
+                            )}
                         </li>
                     </ul>
                 </div>
