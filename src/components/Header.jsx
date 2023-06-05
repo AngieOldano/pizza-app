@@ -1,5 +1,6 @@
 import React from 'react';
 import logonav from "../assets/logonav.png";
+import Formulario from './Formulario';
 
 const Header = () => {
     return (  
@@ -14,7 +15,7 @@ const Header = () => {
                             <div className="container-fluid">
                                 <form className="d-flex" role="search">
                                   <input className="form-control me-2" type="search" placeholder="" aria-label="Search"></input>
-                                    <button className="btn btn-light" type="submit"><i class="bi bi-search"></i></button>
+                                    <button className="btn btn-light" type="submit"><i class="bi bi-search"></i><Formulario/></button>
                                 </form>
                             </div>
                         </li>
