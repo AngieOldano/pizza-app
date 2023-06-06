@@ -100,15 +100,15 @@ const OrderForm = ({closeForm,showForm,addClient}) => {
                                 value={address} />
                         </Form.Group>
                         <Button
-                        variant="primary"
+                        variant="warning"
                         type="submit">
                             Submit
                         </Button>
                         </Form>
                         {
                             error
-                            ? <h4>Form Incomplete</h4>
-                            : null
+                            ? <h5 className='mt-3 text-danger'>Form Incomplete</h5>
+                            : <h5 className='mt-3 text-success'>Form Complete</h5>
                         }
                     
 
