@@ -1,6 +1,6 @@
 import {React, useState} from 'react';
 import logonav from "../assets/logonav.png";
-import Formu from './Form';
+import OrderForm from './OrderForm';
 
 const Header = () => {
 
@@ -49,7 +49,7 @@ const Header = () => {
                         <li li className="nav-item mx-5">
                             <button type="button" className="btn btn-warning rounded-5" onClick={openForm}>Delivery Now</button>
                             {showForm && (
-                                <Formu closeForm={closeForm} showForm={showForm}/>
+                                <OrderForm closeForm={closeForm} showForm={showForm}/>
                             )}
                         </li>
                     </ul>
