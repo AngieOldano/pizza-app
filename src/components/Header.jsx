@@ -17,6 +17,18 @@ const Header = () => {
     };
 
 
+
+
+  const [clients, editClient] = useState([]);
+
+  const addClient = (partner) => {
+    editClient([
+      ...clients,
+      partner
+    ])
+  }
+
+
     return (  
         <div>
             <nav class=" navbar navbar-light bg-faded fixed-top bg-body-tertiary">
@@ -49,7 +61,10 @@ const Header = () => {
                         <li li className="nav-item mx-5">
                             <button type="button" className="btn btn-warning rounded-5" onClick={openForm}>Delivery Now</button>
                             {showForm && (
-                                <OrderForm closeForm={closeForm} showForm={showForm}/>
+                                <OrderForm 
+                                    closeForm={closeForm} 
+                                    showForm={showForm}
+                                    addClient={addClient}/>
                             )}
                         </li>
                     </ul>

@@ -1,8 +1,9 @@
 import { React, Fragment, useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
+import { v4 as uuid } from 'uuid';
 
 
-const OrderForm = ({closeForm,showForm}) => {
+const OrderForm = ({closeForm,showForm,addClient}) => {
 
     const [partner, editPartner] = useState({
         name: "",
@@ -13,7 +14,6 @@ const OrderForm = ({closeForm,showForm}) => {
 
     const {name, lastName, email, address} = partner;
 
-
     const [error, setError] = useState(false);
 
     const handleChange = (e) => {
@@ -21,7 +21,7 @@ const OrderForm = ({closeForm,showForm}) => {
             ...partner,
             [e.target.name] : e.target.value
         })
-        console.log("Tomando datos")
+        console.log("Tomando datos");
     }
 
     const sumbitForm = (e) => {
@@ -33,10 +33,16 @@ const OrderForm = ({closeForm,showForm}) => {
         }
         setError(false);
 
-        console.log("Form sent");
+        partner.id = uuid();
+        console.log(partner);
+        addClient(partner);
 
-
-
+        editPartner({
+            name: "",
+            lastName: "",
+            email: "",
+            address: ""
+        })
     }
 
     return (
@@ -96,12 +102,7 @@ const OrderForm = ({closeForm,showForm}) => {
 
                     </Form>
 
-                    {
-                        error
-                        ? <h4>Form Incomplete</h4>
-                        : null
-
-                    }
+                    
 
                 </Modal.Body>
                 <Modal.Footer>
@@ -117,6 +118,12 @@ const OrderForm = ({closeForm,showForm}) => {
                         onClick={closeForm}>
                     Submit
                     </Button>
+                    {
+                        error
+                        ? <h4>Form Incomplete</h4>
+                        : null
+
+                    }
 
                 </Modal.Footer>
             </Modal>
