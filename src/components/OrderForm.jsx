@@ -25,7 +25,7 @@ const OrderForm = ({closeForm,showForm,addClient}) => {
     }
 
     const sumbitForm = (e) => {
-        e.preventDerfault();
+        e.preventDefault();
 
         if(name.trim() === "" || lastName.trim() === "" || email.trim() === "" || address.trim() === ""){
             setError(true);
@@ -99,9 +99,17 @@ const OrderForm = ({closeForm,showForm,addClient}) => {
                                 onChange={handleChange}
                                 value={address} />
                         </Form.Group>
-
-                    </Form>
-
+                        <Button
+                        variant="primary"
+                        type="submit">
+                            Submit
+                        </Button>
+                        </Form>
+                        {
+                            error
+                            ? <h4>Form Incomplete</h4>
+                            : null
+                        }
                     
 
                 </Modal.Body>
@@ -112,21 +120,14 @@ const OrderForm = ({closeForm,showForm,addClient}) => {
                     Close
                     </Button>
 
-                    <Button
-                        variant="primary"
-                        type="submit"
-                        onClick={closeForm}>
-                    Submit
-                    </Button>
-                    {
-                        error
-                        ? <h4>Form Incomplete</h4>
-                        : null
-
-                    }
+                    
+                    
+                    
 
                 </Modal.Footer>
+                
             </Modal>
+            
         </Fragment>
     );
 }
