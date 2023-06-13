@@ -5,9 +5,8 @@ import OrderForm from './OrderForm';
 const Header = () => {
 
     const [showForm, setShowForm] = useState(false);
-
-    // Para mostrar el modal con el formulario
-    const openForm = () => {
+     // Para mostrar el modal con el formulario
+     const openForm = () => {
         setShowForm(true);
       };
 
@@ -15,19 +14,6 @@ const Header = () => {
     const closeForm = () => {
         setShowForm(false);
     };
-
-
-
-
-  const [clients, editClient] = useState([]);
-
-  const addClient = (partner) => {
-    editClient([
-      ...clients,
-      partner
-    ])
-  }
-
 
     return (  
         <div>
@@ -63,8 +49,7 @@ const Header = () => {
                             {showForm && (
                                 <OrderForm 
                                     closeForm={closeForm} 
-                                    showForm={showForm}
-                                    addClient={addClient}/>
+                                    showForm={showForm}/>
                             )}
                         </li>
                     </ul>

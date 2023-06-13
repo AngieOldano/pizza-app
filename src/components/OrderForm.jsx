@@ -1,9 +1,10 @@
-import { React, Fragment, useState } from 'react';
-import { Button, Form, Modal } from 'react-bootstrap';
+import Client from './Client';
+import { React, Fragment, useState, useEffect } from 'react';
+import { Button, Form, Modal, Col } from 'react-bootstrap';
 import { v4 as uuid } from 'uuid';
 
 
-const OrderForm = ({closeForm,showForm,addClient}) => {
+const OrderForm = ({closeForm,showForm}) => {
 
     const [partner, editPartner] = useState({
         name: "",
@@ -21,7 +22,6 @@ const OrderForm = ({closeForm,showForm,addClient}) => {
             ...partner,
             [e.target.name] : e.target.value
         })
-        console.log("Tomando datos");
     }
 
     const sumbitForm = (e) => {
@@ -32,6 +32,7 @@ const OrderForm = ({closeForm,showForm,addClient}) => {
             return;
         }
         setError(false);
+        
 
         partner.id = uuid();
         console.log(partner);
@@ -43,6 +44,34 @@ const OrderForm = ({closeForm,showForm,addClient}) => {
             email: "",
             address: ""
         })
+    }
+
+    let clientsSaved = JSON.parse(localStorage.getItem('clients'));
+    
+    if(!clientsSaved){
+        clientsSaved = []
+    };
+    
+    const [clients, editClient] = useState([]);
+
+    useEffect( () => {
+        clientsSaved
+            ? localStorage.setItem('clients', JSON.stringify(clients))
+            : localStorage.setItem('clients', JSON.stringify([]));
+    }, [clientsSaved]);
+
+
+
+    const addClient = (partner) => {
+      editClient([
+        ...clients,
+        partner
+      ])
+    }
+
+    const deleteClient = (id) => {
+        const newClients = clients.filter(client => client.id!==id);    
+        editClient(newClients);
     }
 
     return (
@@ -108,9 +137,23 @@ const OrderForm = ({closeForm,showForm,addClient}) => {
                         {
                             error
                             ? <h5 className='mt-3 text-danger'>Form Incomplete</h5>
-                            : <h5 className='mt-3 text-success'>Form Complete</h5>
+                            : null
                         }
-                    
+
+                        <Col
+                            className='m-3'>
+                            <h3>Users List</h3>
+                            {
+                                clients.map( client => 
+                                    <Client
+                                        client={client}
+                                        key={client.id}
+                                        deleteClient={deleteClient}
+                                    />
+                                    )
+                            }
+
+                        </Col>
 
                 </Modal.Body>
                 <Modal.Footer>
@@ -120,14 +163,8 @@ const OrderForm = ({closeForm,showForm,addClient}) => {
                     Close
                     </Button>
 
-                    
-                    
-                    
-
-                </Modal.Footer>
-                
-            </Modal>
-            
+                </Modal.Footer>            
+            </Modal>          
         </Fragment>
     );
 }
