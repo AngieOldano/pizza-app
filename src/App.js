@@ -1,16 +1,8 @@
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Pizzas from './components/Pizzas';
 import pizzaimage from './assets/pizzas-image.png';
-import onion from './assets/onion.jpg';
-import onionPepperoni from './assets/onion-pepperoni.jpg';
-import onionHam from './assets/onion-ham.jpg';
-import modern from './assets/modern.jpg';
-import veggie from './assets/veggie.jpg';
-import hell from './assets/hell.jpg';
-import german from './assets/german.jpg';
-import pepperoni from './assets/pepperoni.jpg';
-import chesses4 from './assets/4chesses.jpg';
 import easy from './assets/easy.png';
 import easy2 from './assets/easy2.png';
 import easy3 from './assets/easy3.png';
@@ -33,9 +25,13 @@ function App() {
     ]
   );
 
+  const [cart, addPizza, DeletePizza] = useState([]);
+
   return (
     <div className=''>
-      <Header/>
+      <Header
+        cart = {cart}
+      />
       
       <div className="mt-5 background-image row">
         <div className='col-7'></div>
@@ -113,102 +109,17 @@ function App() {
             <h1>OUR PIZZAS</h1>
           </article>
         </div>
-      
-        <div>
-          <div className='mb-3 row '>          
-            <div className='pizzas-container d-flex justify-content-center grid gap-0 column-gap-3'> 
-              <div className='col-4 pizza-image-container'>
-                <img className='rounded-4 zoom-pizza' width="400" height="400" src={onion} alt="description of image"/>
-                <div class="overlay">
-                  <div class="text-overlay">
-                    <p>{pizzas[0].name}</p><p>{pizzas[0].ingredients}</p>
-                  </div>
-                </div>
-              </div>
-          
-              <div className='col-4 pizza-image-container'>
-                <img className='rounded-4 zoom-pizza' width="400" height="400" src={veggie} alt="description of image" />
-                <div class="overlay">
-                  <div class="text-overlay">
-                    <p>{pizzas[1].name}</p><p>{pizzas[1].ingredients}</p>
-                  </div>
-                </div>
-              </div>
-         
-              <div className='col-4 pizza-image-container'>
-                <img className='rounded-4 zoom-pizza' width="400" height="400" src={hell} alt="description of image"/>
-                <div class="overlay">
-                  <div class="text-overlay">
-                    <p>{pizzas[2].name}</p><p>{pizzas[2].ingredients}</p>
-                  </div>
-                </div>
-              </div>  
-
-            </div> 
-          </div>
-          <div className='mb-3 row '>          
-            <div className='pizzas-container d-flex justify-content-center grid gap-0 column-gap-3'> 
-              <div className='col-4 pizza-image-container'>
-                <img className='rounded-4 zoom-pizza' width="400" height="400" src={modern} alt="description of image"/>
-                <div class="overlay">
-                  <div class="text-overlay">
-                    <p>{pizzas[3].name}</p><p>{pizzas[3].ingredients}</p>
-                  </div>
-                </div>
-              </div>
-          
-              <div className='col-4 pizza-image-container'>
-                <img className='rounded-4 zoom-pizza' width="400" height="400" src={onionHam} alt="description of image" />
-                <div class="overlay">
-                  <div class="text-overlay">
-                    <p>{pizzas[4].name}</p><p>{pizzas[4].ingredients}</p>
-                  </div>
-                </div>
-              </div>
-         
-              <div className='col-4 pizza-image-container'>
-                <img className='rounded-4 zoom-pizza' width="400" height="400" src={german} alt="description of image"/>
-                <div class="overlay">
-                  <div class="text-overlay">
-                    <p>{pizzas[5].name}</p><p>{pizzas[5].ingredients}</p>
-                  </div>
-                </div>
-              </div>  
-
-            </div> 
-          </div>
-          <div className='mb-3 row '>          
-            <div className='pizzas-container d-flex justify-content-center grid gap-0 column-gap-3'> 
-              <div className='col-4 pizza-image-container'>
-                <img className='rounded-4 zoom-pizza' width="400" height="400" src={onionPepperoni} alt="description of image"/>
-                <div class="overlay">
-                  <div class="text-overlay">
-                  <p>{pizzas[6].name}</p><p>{pizzas[6].ingredients}</p>
-                  </div>
-                </div>
-              </div>
-                      
-              <div className='col-4 pizza-image-container'>
-                <img className='rounded-4 zoom-pizza' width="400" height="400" src={chesses4} alt="description of image" />
-                <div class="overlay">
-                  <div class="text-overlay">
-                    <p>{pizzas[7].name}</p><p>{pizzas[7].ingredients}</p>
-                  </div>
-                </div>
-              </div>
-         
-              <div className='col-4 pizza-image-container'>
-                <img className='rounded-4 zoom-pizza' width="400" height="400" src={pepperoni} alt="description of image"/>
-                <div class="overlay">
-                  <div class="text-overlay">
-                    <p>{pizzas[8].name}</p><p>{pizzas[8].ingredients}</p>
-                  </div>
-                </div>
-              </div>  
-            </div> 
-          </div>
-        </div>
-
+        {
+          pizzas.map(pizza => (
+          <Pizzas
+            cart = {cart}
+            pizzas = {pizzas}
+            pizza = {pizza}
+            key = {pizza.id}
+            addPizza = {addPizza}
+            />
+          ))
+        }
         
       </div>
 
