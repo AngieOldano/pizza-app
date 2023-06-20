@@ -1,17 +1,19 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import Pizzas from './Pizzas';
-import { Button, Form, Modal, Col } from 'react-bootstrap';
+import { Button, Form, Modal, Col, ModalFooter } from 'react-bootstrap';
 
 
 const Cart = ({ cart, closeCart, showCart, setCart }) => {
 
   const deletePizza = (pizza) => {
-    if (cart){
-      const newCart = cart.filter(pizzaCart => pizzaCart.id!==pizza.id);    
-      setCart(newCart);
-    }
+    const newCart = cart.filter(pizzaCart => pizzaCart.id!==pizza.id);    
+    setCart(newCart);
   };
 
+  const totalCart = (cart) => {
+    const total = cart.reduce((partialSum, pizza) => partialSum + pizza.price, 0)
+    return(total)
+  }
 
     return (
       <Fragment>
@@ -23,14 +25,22 @@ const Cart = ({ cart, closeCart, showCart, setCart }) => {
             <div>
             {cart.map((pizza, id) => (
               <div>
-                <div>{pizza.name}</div>
-                <button onClick={() => deletePizza(pizza)}>Delete</button>
+                <div>
+                  {pizza.name}  | $ {pizza.price}
+                  <button type="button" className="btn btn-danger rounded-5 m-2" onClick={() => deletePizza(pizza)}>Delete</button>
+                </div>
               </div>
                 
               ))
               }
             </div>
           </Modal.Body>
+          <ModalFooter>
+            <button type="button" className="btn btn-warning rounded-5 m-2 ">Buy</button>
+            <div>
+              Total: $ {totalCart(cart)}
+            </div>       
+          </ModalFooter>
         </Modal>
       </Fragment>
     );

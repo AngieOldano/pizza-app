@@ -24,10 +24,10 @@ const Pizzas = ({pizzas,setCart,cart}) => {
                   <img className='rounded-4 zoom-pizza' width="400" height="400" src={product.image} alt={product.name}/>
                   <div class="overlay">
                     <div class="text-overlay">
-                        <p>{product.ingredients} | {product.price}</p>
+                        <p>{product.ingredients} </p><p> $ {product.price}</p>
 
                       {
-                         <button onClick={() => addPizza(product)}>Comprar</button>
+                         <button type="button" className="btn btn-light rounded-5" onClick={() => addPizza(product)}>Add to cart</button>
 
                       }
                     
