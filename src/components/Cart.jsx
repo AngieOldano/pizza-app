@@ -1,9 +1,18 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import Pizzas from './Pizzas';
 import { Button, Form, Modal, Col } from 'react-bootstrap';
 
 
-const Cart = ({ closeCart, showCart, cart, deletePizza, pizza }) => {
+const Cart = ({ cart, closeCart, showCart, setCart }) => {
+
+  const deletePizza = (pizza) => {
+    if (cart){
+      const newCart = cart.filter(pizzaCart => pizzaCart.id!==pizza.id);    
+      setCart(newCart);
+    }
+  };
+
+
     return (
       <Fragment>
         <Modal show={showCart} onHide={closeCart}>
@@ -12,11 +21,14 @@ const Cart = ({ closeCart, showCart, cart, deletePizza, pizza }) => {
           </Modal.Header>
           <Modal.Body>
             <div>
-              {cart.map((pizza, id) => (
-                <Pizzas 
-                    key={id} 
-                    pizza={pizza} />
-              ))}
+            {cart.map((pizza, id) => (
+              <div>
+                <div>{pizza.name}</div>
+                <button onClick={() => deletePizza(pizza)}>Delete</button>
+              </div>
+                
+              ))
+              }
             </div>
           </Modal.Body>
         </Modal>

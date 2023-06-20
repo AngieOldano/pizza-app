@@ -3,7 +3,7 @@ import logonav from "../assets/logonav.png";
 import OrderForm from './OrderForm';
 import Cart from './Cart';
 
-const Header = ({cart}) => {
+const Header = ({cart, setCart}) => {
 
    
     const [showForm, setShowForm] = useState(false);
@@ -59,6 +59,7 @@ const Header = ({cart}) => {
                             {showCart && (
                                 <Cart 
                                     cart = {cart}
+                                    setCart={setCart}
                                     closeCart={closeCart} 
                                     showCart={showCart}/>
                             )}
