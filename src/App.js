@@ -7,25 +7,36 @@ import easy from './assets/easy.png';
 import easy2 from './assets/easy2.png';
 import easy3 from './assets/easy3.png';
 import { useState } from 'react';
+import onion from './onion.jpg';
+import onionPepperoni from './assets/onion-pepperoni.jpg';
+import onionHam from './assets/onion-ham.jpg';
+import modern from './assets/modern.jpg';
+import veggie from './assets/veggie.jpg';
+import hell from './assets/hell.jpg';
+import german from './assets/german.jpg';
+import pepperoni from './assets/pepperoni.jpg';
+import chesses4 from './assets/4chesses.jpg';
+
 
 function App() {
 
 
-  const [pizzas, setPizzas] = useState(
+  const pizzas = 
     [
-      {id:1,name:"ONION SPECIAL", ingredients:"Sauce, mozzarella, onion cut into feathers, cherry tomatoes confit, black olives"},
-      {id:2,name:"VEGGIE ", ingredients:"Sauce, muzza, zucchini, roasted, roasted eggplant, candied cherry tomatoes, black olives, and basil leaves"},
-      {id:3,name:"HELL ", ingredients:"Sauce, mozza, sliced bacon, sliced green jalapeños, red jalapeño sauce, red onion, shredded provolone and basil leaves"},
-      {id:4,name:"MODERN ", ingredients:"Sauce, mozzarella, arugula, raw ham, dehydrated tomatoes, parmesan"},
-      {id:5,name:"ONION HAM ", ingredients:"Sauce, mozzarella, onion cut into feathers, raw ham, parmesan"},
-      {id:6,name:"GERMAN ", ingredients:"Sauce, mozzarella, caramelized onion, grill sausage and mustard"},
-      {id:7,name:"ONION PEPPERONI ", ingredients:"Sauce, mozzarella, onion cut into feathers, pepperoni"},
-      {id:8,name:"4 CHESSES ", ingredients:"Sauce, mozzarella, parmesan, fontina, gorgonzola, black olives"},
-      {id:9,name:"PEPPERONI ", ingredients:"Mozzarella, pepperoni, parmesan"}
+      {id:1,price:20,image:{onion},name:"ONION SPECIAL", ingredients:"Sauce, mozzarella, onion cut into feathers, cherry tomatoes confit, black olives"},
+      {id:2,price:25,image:{veggie},name:"VEGGIE ", ingredients:"Sauce, muzza, zucchini, roasted, roasted eggplant, candied cherry tomatoes, black olives, and basil leaves"},
+      {id:3,price:30,image:{hell},name:"HELL ", ingredients:"Sauce, mozza, sliced bacon, sliced green jalapeños, red jalapeño sauce, red onion, shredded provolone and basil leaves"},
+      {id:4,price:25,image:{modern},name:"MODERN ", ingredients:"Sauce, mozzarella, arugula, raw ham, dehydrated tomatoes, parmesan"},
+      {id:5,price:25,image:{onionHam},name:"ONION HAM ", ingredients:"Sauce, mozzarella, onion cut into feathers, raw ham, parmesan"},
+      {id:6,price:30,image:{german},name:"GERMAN ", ingredients:"Sauce, mozzarella, caramelized onion, grill sausage and mustard"},
+      {id:7,price:25,image:{onionPepperoni},name:"ONION PEPPERONI ", ingredients:"Sauce, mozzarella, onion cut into feathers, pepperoni"},
+      {id:8,price:30,image:{chesses4},name:"4 CHESSES ", ingredients:"Sauce, mozzarella, parmesan, fontina, gorgonzola, black olives"},
+      {id:9,price:25,image:{pepperoni},name:"PEPPERONI ", ingredients:"Mozzarella, pepperoni, parmesan"}
     ]
-  );
 
-  const [cart, addPizza, DeletePizza] = useState([]);
+
+  const [cart, setCart] = useState([]);
+
 
   return (
     <div className=''>
@@ -113,14 +124,14 @@ function App() {
           pizzas.map(pizza => (
           <Pizzas
             cart = {cart}
+            setCart={setCart}
             pizzas = {pizzas}
             pizza = {pizza}
             key = {pizza.id}
-            addPizza = {addPizza}
             />
           ))
         }
-        
+         
       </div>
 
       <Footer

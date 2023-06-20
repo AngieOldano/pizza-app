@@ -1,48 +1,51 @@
 import React, { Fragment } from 'react';
-import onion from '../assets/onion.jpg';
-import onionPepperoni from '../assets/onion-pepperoni.jpg';
-import onionHam from '../assets/onion-ham.jpg';
-import modern from '../assets/modern.jpg';
-import veggie from '../assets/veggie.jpg';
-import hell from '../assets/hell.jpg';
-import german from '../assets/german.jpg';
-import pepperoni from '../assets/pepperoni.jpg';
-import chesses4 from '../assets/4chesses.jpg';
+import onion from '../assets/hell.jpg';
 
-const Pizzas = ({pizzas,pizza,addPizza,cart}) => {
-  
-  const {id, name, ingredients} = pizza;
+const Pizzas = ({pizzas,pizza,setCart,cart}) => {
 
-  const addPizzas = (id) => {
-    const pizza = pizzas.filter(
-        pizza => pizza.id === id
-    )[0];
-    addPizza([...cart, pizza]);
-    console.log(cart); 
-};
+  const {id, image, name, ingredients} = pizza;
+
+  const addPizza = (id) => {
+    setCart([...cart, id]);
+    console.log(cart)
+  };
   
+  const deletePizza = (id) => {
+    if (cart){
+      const newCart = pizzas.filter(pizza => pizza.id!==id);    
+      setCart(newCart);
+    }
+  };
     return ( 
         <Fragment>
-          <div>
-            <div className='mb-3 row '>          
-              <div className='pizzas-container d-flex justify-content-center grid gap-0 column-gap-3'> 
-                <div className='col-4 pizza-image-container'>
-                  <img className='rounded-4 zoom-pizza' width="400" height="400" src={onion} alt="description of image"/>
+          <div className='row'>
+            {pizzas.map(product => (          
+            <div className='col'>
+              <div className='pizzas-container d-flex justify-content-center grid gap-0' > 
+                <div className='pizza-image-container 'key={product.id}>
+                  <img className='rounded-4 zoom-pizza' width="400" height="400" src={product.image} alt={product.name}/>
                   <div class="overlay">
                     <div class="text-overlay">
-                      <p>{pizzas[0].name}</p><p>{pizzas[0].ingredients}</p>
-                      <button
-                        type="button"
-                        onClick={ () => addPizzas(id)}>
-                          Comprar </button>
+                        <p>{product.ingredients} | {product.price}</p>
+
+                      {
+                        pizzas
+                          ? <button onClick={() => addPizza(id)}>Comprar</button>
+
+                          : <button onClick={() => deletePizza(id)}>Eliminar</button>
+                      }
+                    
                     </div>
                   </div>
                 </div>
-              </div> 
-            </div>
+              </div>
+            </div> 
+            ))}
           </div>
+
         </Fragment>
      );
 }
  
+
 export default Pizzas;
