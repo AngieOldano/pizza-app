@@ -36,10 +36,8 @@ const Cart = ({ cart, closeCart, showCart, setCart }) => {
             </div>
           </Modal.Body>
           <ModalFooter>
-            <button type="button" className="btn btn-warning rounded-5 m-2 ">Buy</button>
-            <div>
-              Total: $ {totalCart(cart)}
-            </div>       
+              <div><button type="button" className="btn btn-warning rounded-5 m-2 ">Buy</button></div>
+              <div>Total: $ {totalCart(cart)}</div>           
           </ModalFooter>
         </Modal>
       </Fragment>
