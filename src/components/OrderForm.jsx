@@ -129,15 +129,15 @@ const OrderForm = ({closeForm,showForm}) => {
                                 value={address} />
                         </Form.Group>
                         <Button
-                        variant="warning"
-                        type="submit">
-                            Submit
+                            variant="warning"
+                            type="submit">
+                                Submit
                         </Button>
                         </Form>
                         {
                             error
-                            ? <h5 className='mt-3 text-danger'>Form Incomplete</h5>
-                            : null
+                                ? <h5 className='mt-3 text-danger'>Form Incomplete</h5>
+                                : null
                         }
 
                         <Col
@@ -148,21 +148,18 @@ const OrderForm = ({closeForm,showForm}) => {
                                     <Client
                                         client={client}
                                         key={client.id}
-                                        deleteClient={deleteClient}
-                                    />
-                                    )
+                                        deleteClient={deleteClient}/>
+                                )
                             }
 
                         </Col>
-
                 </Modal.Body>
                 <Modal.Footer>
                     <Button 
                         variant="secondary" 
                         onClick={closeForm}>
-                    Close
+                            Close
                     </Button>
-
                 </Modal.Footer>            
             </Modal>          
         </Fragment>
