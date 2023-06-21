@@ -6,7 +6,9 @@ import { Button, Form, Modal, Col, ModalFooter } from 'react-bootstrap';
 const Cart = ({ cart, closeCart, showCart, setCart }) => {
 
   const deletePizza = (pizza) => {
-    const newCart = cart.filter(pizzaCart => pizzaCart.id!==pizza.id);    
+    const index = cart.findIndex(pizzaCart => pizzaCart.id === pizza.id);
+    const newCart = [...cart];
+    newCart.splice(index, 1);
     setCart(newCart);
   };
 
@@ -45,5 +47,3 @@ const Cart = ({ cart, closeCart, showCart, setCart }) => {
   };
   
   export default Cart;
-  
-  

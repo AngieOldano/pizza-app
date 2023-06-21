@@ -25,12 +25,9 @@ const Pizzas = ({pizzas,setCart,cart}) => {
                   <div class="overlay">
                     <div class="text-overlay">
                         <p>{product.ingredients} </p><p> $ {product.price}</p>
-
                       {
                          <button type="button" className="btn btn-light rounded-5" onClick={() => addPizza(product)}>Add to cart</button>
-
                       }
-                    
                     </div>
                   </div>
                 </div>
