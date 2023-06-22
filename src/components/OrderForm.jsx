@@ -1,5 +1,6 @@
 import Client from './Client';
-import { React, Fragment, useState, useEffect } from 'react';
+import React from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { Button, Form, Modal, Col } from 'react-bootstrap';
 import { v4 as uuid } from 'uuid';
 
